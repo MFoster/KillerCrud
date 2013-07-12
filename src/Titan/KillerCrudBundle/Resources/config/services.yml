@@ -1,0 +1,7 @@
+services:
+    titan_contract_form:
+        class: Titan\KillerCrudBundle\Form\ContractType
+        arguments: [@router]
+        tags:
+            - name:  form.type
+              alias: contract_form

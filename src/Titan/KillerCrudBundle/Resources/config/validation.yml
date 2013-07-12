@@ -1,0 +1,10 @@
+Titan\KillerCrudBundle\Entity\Contract:
+    properties:
+        target: 
+            - NotBlank: ~
+        address:
+            - NotBlank: ~
+            - Url: ~
+        reward:
+            - NotBlank: ~
+            

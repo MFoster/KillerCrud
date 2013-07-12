@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}{% endblock %}</title>
+	{% block style %}
+	   {% stylesheets '@TitanKillerCrudBundle/Resources/public/css/bootstrap.css'
+	                  '@TitanKillerCrudBundle/Resources/public/css/bootstrap-responsive.css' 
+	                  '@TitanKillerCrudBundle/Resources/public/css/killer.css'
+	   %}
+	   <link rel="stylesheet" href="{{ asset_url }}" />
+	   
+	   {% endstylesheets %}
+    {% endblock %}	
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <div class="row">
+                <a href="{{ path('titan_killercrud_default_index') }}" class="brand">Killer Crud</a>
+                <a href="{{ path('contract_new') }}" class="btn btn-inverse pull-right">Create Contract</a>
+                <div class="clearfix"></div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+<header class="jumbotron subhead">
+    <div class="container">
+        <h1>Killer Crud</h1>
+        <p>Learn Symfony's CRUD Layer and customize themes with Bootstrap</p>
+    </div>
+    
+</header>
+
+
+
+{% block body %}
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                <ul class="nav nav-tabs nav-stacked">
+                    <li><a href="{{ path('titan_killercrud_default_index') }}">Home</a></li>
+                    <li><a href="{{ path('contract') }}">Manage Contracts</a></li>
+                    <li><a href="{{ path('contract_new') }}">New Contract</a></li>                
+                </ul>
+            </div>
+            <div class="span9">
+                <div class="row">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block script %}
+    {% javascripts  '@TitanKillerCrudBundle/Resources/public/js/jquery-1.10.2.js'
+                    '@TitanKillerCrudBundle/Resources/public/js/bootstrap.js'
+    
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    
+    {% endjavascripts %}
+{% endblock %}
+
+</body>
+</html>

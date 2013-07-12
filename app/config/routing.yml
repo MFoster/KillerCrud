@@ -1,0 +1,9 @@
+titan_killer_crud_contract:
+    resource: "@TitanKillerCrudBundle/Controller/ContractController.php"
+    prefix: /
+    type: annotation
+
+titan_killer_crud_default:
+    resource: "@TitanKillerCrudBundle/Controller/DefaultController.php"
+    prefix: /
+    type: annotation

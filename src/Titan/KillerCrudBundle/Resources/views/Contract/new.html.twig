@@ -1,0 +1,13 @@
+{% extends 'TitanKillerCrudBundle:Contract:base.html.twig' %}
+
+{% block content -%}
+<div class="span8">
+    <div class="well">
+        <h1>Contract creation</h1>
+        <a href="{{ path('contract') }}">
+                Back to the list
+            </a>
+        {{ form(form) }}
+    </div>
+</div>
+{% endblock %}

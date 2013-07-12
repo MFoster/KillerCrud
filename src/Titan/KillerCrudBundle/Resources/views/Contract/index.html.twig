@@ -1,0 +1,41 @@
+{% extends 'TitanKillerCrudBundle:Contract:base.html.twig' %}
+
+{% block content -%}
+<div class="span8">
+    <div class="well">
+        <h1>Contract list</h1>
+
+        <table class="records_list table table-striped">
+            <thead>
+                <tr>
+                    <th>Target</th>
+                    <th>Address</th>
+                    <th>Reward</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('contract_show', { 'id': entity.id }) }}">{{ entity.target }}</a></td>
+                    <td>{{ entity.address }}</td>
+                    <td>{{ entity.reward }}</td>
+                    <td>
+                        <div class="btn-group">
+                            <a href="{{ path('contract_show', { 'id': entity.id }) }}" class="btn">show</a>
+                            <a href="{{ path('contract_edit', { 'id': entity.id }) }}" class="btn btn-info">edit</a>
+                        </div>
+    
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    
+        <a href="{{ path('contract_new') }}" class="btn btn-primary">
+            Create a new entry
+        </a>
+        
+    </div>
+</div>
+{% endblock %}
