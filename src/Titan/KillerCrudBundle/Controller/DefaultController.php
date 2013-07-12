@@ -26,14 +26,14 @@ class DefaultController extends Controller
      * 
      * @access public
      * @return void
-     * @Route("/demo.html")
+     * @Route("/horizontal.html", name="form_horizontal")
      * @Template("TitanKillerCrudBundle:Default:default-form.html.twig")
      */
     public function demoAction()
     {
         $entity  = new Contract();
-        $form = $this->createForm(new ContractType(), $entity)->createView();
         
+        $form = $this->createForm('contract_form', $entity)->createView();
         
         return array('form' => $form);
     }
